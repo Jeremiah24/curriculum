@@ -6,15 +6,15 @@
  * @returns {string}
  */
 
-const solution = (a, b) => {
-  let result = '';
-  for (let i = 0; i < a; i++) {
-    result = result + b;
+const solution = (n, s, i = 0, output = '') => {
+    
+  if (i === n){
+    return output
   }
-  return result;
-};
+  output = output + s 
+  return solution(n, s, i+1, output)
 
-console.log(solution(3, 'kona'));
+}
 
 module.exports = {
   solution,
