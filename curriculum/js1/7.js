@@ -1,13 +1,24 @@
+
 /**
  * isPrime - returns if number is prime
  *    Prime: numbers can only be divided by 1 and itself
  * @param {number} a
  * @returns {boolean}
  */
+  const solution = (num, i = 2) => {
+    if(num === 1){
+      return false
+    }
+    if(i >= num){
+    return true
+    }
+    if (num%i === 0){
+      return false
+    }
+      return solution(num, i+1)
+  }
 
-const solution = (a) => {
-  return 0;
-};
+
 
 module.exports = {
   solution,
