@@ -4,17 +4,21 @@
  * @param {number} a
  * @returns {number}
  */
-
-const solution = (a) => {
-  let sum = 0;
-  for (let i = 0; a > i; i++) {
-    if (a%i === 0) {
-      sum = i + sum 
+  const solution = (num, i = 2, output = 0) => {
+    if(i === num) {
+    console.log('result:', output);
+      return output
     }
+
+    console.log(i);
+    if (num%i === 0)
+      output = output + i
+    return solution(num,i+1,output)
+   
   }
-  return sum;
-};
+solution(6)
+
 
 module.exports = {
-  solution,
-};
+  solution
+}
